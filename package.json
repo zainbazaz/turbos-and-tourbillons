@@ -2,8 +2,9 @@
   "name": "turbos-and-tourbillons",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/zainbazaz/turbos-and-tourbillons/issues"
   },
-  "homepage": "https://github.com/zainbazaz/turbos-and-tourbillons#readme"
+  "homepage": "https://github.com/zainbazaz/turbos-and-tourbillons#readme",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
+  }
 }

@@ -1,0 +1,19 @@
+{
+  "name": "turbos-and-tourbillons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zainbazaz/turbos-and-tourbillons.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zainbazaz/turbos-and-tourbillons/issues"
+  },
+  "homepage": "https://github.com/zainbazaz/turbos-and-tourbillons#readme"
+}

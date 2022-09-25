@@ -46,6 +46,7 @@
           <% for(var i=0; i<comment.length; i++) {%>
             <li class="comments mt-2">
               <span class="me-4"><%= comment[i].comment %></span>
+              <span class="me-4">By: <%= comment[i].createdBy %></span>
               <form
                 class="row"
                 action="/comment/likeComment/<%=comment[i]._id %>?_method=PUT"

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Turbos and Tourbillons</title>
+
+    
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body>
+    <header class="container mx-auto p-4">
+      <div class="navbar bg-base-100 flex flex-col-reverse md:flex-row ">
+        
+        <div class="collapse  ">
+          <input type="checkbox" class="peer" /> 
+          <div class="collapse-title px-0 flex justify-center bg-base-100 text-primary-title peer-checked:bg-secondary peer-checked:text-secondary-content">
+            <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+          </div>
+          <div class=" collapse-content flex flex-col space-y-4 align-center bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content ">
+            <p><strong>User Name</strong>: <%= user.userName %></p>
+            <p><strong>Email</strong>: <%= user.email %></p>
+            <a href="/logout" class="btn btn-accent">Logout</a>
+          </div>
+        </div>
+
+        <div class="mx-auto">
+          <a href="/" class="btn btn-ghost normal-case text-2xl font-light">Turbos and Tourbillons</a>
+        </div>
+
+        <!-- TODO:
+                Sole purpose of the div below is to center the div above.
+                Find a better way to impliment
+        -->
+
+        <div class="collapse invisible ">
+          <input type="checkbox" class="peer" /> 
+          
+          <div class=" collapse-content flex flex-col space-y-4 align-center bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content ">
+            <p><strong>User Name</strong>: <%= user.userName %></p>
+            <p><strong>Email</strong>: <%= user.email %></p>
+            <a href="/logout" class="btn btn-accent">Logout</a>
+          </div>
+        </div>
+
+      </div>
+    </header>

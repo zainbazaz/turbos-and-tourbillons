@@ -2358,6 +2358,10 @@ body[dir="rtl"] .checkbox:checked,
   place-items: center;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
 }
@@ -2470,8 +2474,16 @@ body[dir="rtl"] .checkbox:checked,
   padding-top: 0.5rem;
 }
 
+.pt-0 {
+  padding-top: 0px;
+}
+
 .text-center {
   text-align: center;
+}
+
+.align-top {
+  vertical-align: top;
 }
 
 .text-2xl {
@@ -2525,6 +2537,10 @@ body[dir="rtl"] .checkbox:checked,
 }
 
 @media (min-width: 480px) {
+  .sm\:hidden {
+    display: none;
+  }
+
   .sm\:h-10 {
     height: 2.5rem;
   }
@@ -2554,8 +2570,24 @@ body[dir="rtl"] .checkbox:checked,
     width: 1rem;
   }
 
+  .md\:invisible {
+    visibility: hidden;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:items-start {
+    align-items: flex-start;
+  }
+
+  .md\:items-center {
+    align-items: center;
   }
 
   .md\:justify-start {
@@ -2577,5 +2609,9 @@ body[dir="rtl"] .checkbox:checked,
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
   }
 }

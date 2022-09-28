@@ -65,12 +65,13 @@
     <div class="w-full flex flex-wrap justify-center items-baseline space-y-4 py-4 bg-base-200 md:space-x-6">
       <% for(var i=0; i<posts.length; i++) {%>
         <a href="/post/<%= posts[i]._id%>">
-          <div class="btn-ghost w-96 p-2 bg-base-100 rounded-md flex flex-col border border-secondary shadow-md shadow-secondary hover:shadow-none">
-            <div class="w-full h-64 rounded-md ">
-                <img class="w-full max-h-full" src="<%= posts[i].image%>"  />
+          <div class="btn-ghost w-96 p-2 bg-base-100 rounded-3xl flex flex-col border border-secondary shadow-md shadow-secondary hover:shadow-none">
+            <div class="w-full h-64 mt-2 rounded-md ">
+                <img class="w-full max-h-full rounded-md" src="<%= posts[i].image%>"  />
             </div>
-            <div class="card-body">
+            <div class="card-body flex-row justify-between">
               <h2 class="card-title"><%= posts[i].title%></h2>
+              <span class="text-md"><i class="fa-regular fa-heart fa-sm"></i> <%= posts[i].likes%></span>
             </div>
           </div>
         </a>  

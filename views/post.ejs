@@ -1,5 +1,5 @@
-<%- include('partials/header') -%>
-<div class="container">
+<%- include('partials/headerLoggedIn') -%>
+<!-- <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-6">
       <h2><%= post.title %></h2>
@@ -63,6 +63,85 @@
       <a class="btn btn-primary" href="/profile">Return to Profile</a>
       <a class="btn btn-primary" href="/feed">Return to Feed</a>
     </div>
+  </div>
+</div> -->
+<div class="w-full min-h-screen px-4 bg-base-200 py-12 flex justify-center">
+  <div class="card min-w-2/3 lg:card-side p-4 rounded-3xl border border-primary shadow-sm shadow-secondary bg-base-100 ">
+    <div class="avatar placeholder w-32 rounded-full p-2 pr-4 h-12 bg-neutral lg:hidden">
+      <div class="bg-accent text-primary-content rounded-full w-8">
+        <span class="text-xl"><%= user.userName[0] %></span>
+      </div>
+      <h2 class="card-title ml-4"><%= user.userName %></h2>
+    </div>
+    <figure><img class="rounded-md mt-4 lg:mt-0 " src="<%= post.image%>" /></figure>
+    <div class="card-body w-full p-4 px-0 lg:px-4 ">
+      <div class="avatar placeholder w-full mb-4 rounded-full p-2 pr-4 h-12 bg-neutral hidden lg:flex">
+        <div class="bg-accent text-primary-content rounded-full w-8">
+          <span class="text-xl"><%= user.userName[0] %></span>
+        </div>
+        <h2 class="card-title ml-4"><%= user.userName %></h2>
+      </div>
+      <div class="flex justify-between">
+        <h2 class="card-title"><%= post.title %></h2>
+        <form action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
+          <button class="btn-sm btn-ghost" type="submit">
+            <span class="text-xl"><i class="fa-regular fa-heart fa-sm"></i> <%= post.likes%></span>
+          </button>
+        </form>
+      </div>
+      <p class="grow-0"><%= post.caption %></p>
+      <div class="card-actions mt-2 p-2 rounded-md bg-base-200 lg:mt-12	">
+        <div class="flex w-full items-center justify-between">
+          <h3 class="text-lg">Comments (<%=comment.length %>)</h3>
+          <label for="my-modal-3" class="btn btn-md bg-secondary text-primary-content modal-button">Add comment</label>
+        </div>
+        <div class="w-full flex flex-col">
+          <% for(var i=0; i<comment.length; i++) {%>
+            <div class="rounded-lg bg-neutral p-2 mb-3">
+                <div class="w-full flex bg-base-500">
+                  <div class="avatar placeholder rounded-full p-1 pr-4 bg-base-100 -ml-1">
+                    <div class="bg-accent text-primary-content rounded-full w-7">
+                      <span class="text-lg"><%= user.userName[0] %></span>
+                    </div>
+                    <h2 class="card-title text-md ml-4"><%= user.userName %></h2>
+                  </div>
+                </div>
+              <div class="pt-4 pl-2 text-lg flex justify-between">
+                <p><%= comment[i].comment %></p>
+                <form action="/comment/likeComment/<%=comment[i]._id %>?_method=PUT" method="POST">
+                  <button class="btn-sm btn-ghost" type="submit">
+                    <span class="text-lg"><i class="fa-regular fa-heart fa-sm"></i> <%= comment[i].likes%></span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Comment Modal -->
+<input type="checkbox" id="my-modal-3" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box  relative">
+    <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-3 top-3">✕</label>
+    <h3 class="text-lg font-bold">New Comment</h3>
+    <form action="/comment/createComment/<%= post._id %>" method="POST">
+      <div class="form-control mt-4">
+        <input
+          type="text"
+          class="input input-bordered"
+          name="comment"
+          id="comment"
+          placeholder="add a comment.."
+        />
+      </div>
+      <div class="form-control mt-6">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
   </div>
 </div>
 

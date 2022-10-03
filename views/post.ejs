@@ -18,11 +18,18 @@
       </div>
       <div class="flex justify-between">
         <h2 class="card-title"><%= post.title %></h2>
-        <form action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
-          <button class="btn-sm btn-ghost" type="submit">
-            <span class="text-xl"><i class="fa-regular fa-heart fa-sm"></i> <%= post.likes%></span>
-          </button>
-        </form>
+        <div class="flex justify-between items-center space-x-2">
+          <form action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
+            <button class="btn-sm btn-ghost" type="submit">
+              <span class="text-xl"><i class="fa-regular fa-heart fa-sm"></i> <%= post.likes%></span>
+            </button>
+          </form>
+          <%if(post.user == user.id){ %>
+            <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-3">
+              <button class="btn btn-accent" type="submit"><i class="fa-regular fa-trash-can fa-xl"></i></button>
+            </form>
+            <%}%>
+        </div>
       </div>
       <p class="grow-0"><%= post.caption %></p>
       <div class="card-actions mt-2 p-2 rounded-md bg-base-200 lg:mt-12	">

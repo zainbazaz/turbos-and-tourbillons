@@ -23,9 +23,9 @@
             <div class="w-full flex mb-4 bg-base-500">
               <div class="avatar placeholder rounded-full p-2 pr-4 h-12 bg-neutral">
                 <div class="bg-accent text-primary-content rounded-full w-8">
-                  <span class="text-xl"><%= user.userName[0] %></span>
+                  <span class="text-xl"><%= posts[i].createdBy[0] %></span>
                 </div>
-                <h2 class="card-title ml-4"><%= user.userName %></h2>
+                <h2 class="card-title ml-4"><%=  posts[i].createdBy %></h2>
               </div>
             </div>
             <a href="/post/<%= posts[i]._id%>">

@@ -12,9 +12,9 @@
     <div class="card-body w-full  p-4 px-0 lg:w-1/2 lg:px-4 ">
       <div class="avatar placeholder w-full mb-4 rounded-full p-2 pr-4 h-12 bg-neutral hidden lg:flex">
         <div class="bg-accent text-primary-content rounded-full w-8">
-          <span class="text-xl"><%= user.userName[0] %></span>
+          <span class="text-xl"><%= post.createdBy[0] %></span>
         </div>
-        <h2 class="card-title ml-4"><%= user.userName %></h2>
+        <h2 class="card-title ml-4"><%= post.createdBy %></h2>
       </div>
       <div class="flex justify-between">
         <h2 class="card-title"><%= post.title %></h2>
@@ -43,9 +43,9 @@
                 <div class="w-full flex bg-base-500">
                   <div class="avatar placeholder rounded-full p-1 pr-4 bg-base-100 -ml-1">
                     <div class="bg-accent text-primary-content rounded-full w-7">
-                      <span class="text-lg"><%= user.userName[0] %></span>
+                      <span class="text-lg"><%= comment[i].createdBy[0] %></span>
                     </div>
-                    <h2 class="card-title text-md ml-4"><%= user.userName %></h2>
+                    <h2 class="card-title text-md ml-4"><%= comment[i].createdBy %></h2>
                   </div>
                 </div>
               <div class="pt-4 pl-2 text-lg flex justify-between">

@@ -31,4 +31,13 @@ module.exports = {
       console.log(err);
     }
   },
+  deleteComment: async (req, res) => {
+    try {
+      const post = await Comments.findById(req.params.id);
+      await Comments.remove({ _id: req.params.id });
+      res.redirect(`/post/${post.post}`);
+    } catch (err) {
+      console.log(err)
+    }
+  },
 };

@@ -25,7 +25,7 @@
             </button>
           </form>
           <%if(post.user == user.id){ %>
-            <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-3">
+            <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST">
               <button class="btn btn-accent" type="submit"><i class="fa-regular fa-trash-can fa-xl"></i></button>
             </form>
             <%}%>
@@ -50,11 +50,18 @@
                 </div>
               <div class="pt-4 pl-2 text-lg flex justify-between">
                 <p><%= comment[i].comment %></p>
-                <form action="/comment/likeComment/<%=comment[i]._id %>?_method=PUT" method="POST">
-                  <button class="btn-sm btn-ghost" type="submit">
-                    <span class="text-lg"><i class="fa-regular fa-heart fa-sm"></i> <%= comment[i].likes%></span>
-                  </button>
-                </form>
+                <div class="flex justify-center items-center space-x-2">
+                  <form action="/comment/likeComment/<%=comment[i]._id %>?_method=PUT" method="POST">
+                    <button class="btn-sm btn-ghost" type="submit">
+                      <span class="text-lg"><i class="fa-regular fa-heart fa-sm"></i> <%= comment[i].likes%></span>
+                   </button>
+                  </form>
+                    <%if(comment[i].createdBy == user.userName){ %>
+                      <form action="/comment/deleteComment/<%=comment[i]._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-xs btn-accent" type="submit"><i class="fa-regular fa-trash-can fa-lg"></i></button>
+                      </form>
+                    <%}%>
+                </div>
               </div>
             </div>
           <% } %>

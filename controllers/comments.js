@@ -1,4 +1,5 @@
 const Comments = require("../models/Comment");
+const Post = require("../models/Post")
 
 module.exports = {
   createComment: async (req, res) => {
@@ -9,6 +10,12 @@ module.exports = {
         post: req.params.id,
         createdBy: req.user.userName
       });
+      await Post.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $inc: { comments: 1 },
+        }
+      );
       console.log("Comment has been added!");
       res.redirect(`/post/${req.params.id}`);
     } catch (err) {

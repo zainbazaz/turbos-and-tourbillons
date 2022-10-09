@@ -1184,13 +1184,6 @@ html {
   color: hsl(var(--wac, var(--nc)) / var(--tw-text-opacity));
 }
 
-.alert-error {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--er) / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: hsl(var(--erc, var(--nc)) / var(--tw-text-opacity));
-}
-
 .avatar-group .avatar {
   overflow: hidden;
   border-radius: 9999px;
@@ -2008,6 +2001,11 @@ body[dir="rtl"] .checkbox:checked,
   margin-bottom: 0.5rem;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -2144,6 +2142,14 @@ body[dir="rtl"] .checkbox:checked,
   width: 11rem;
 }
 
+.w-\[30\%\] {
+  width: 30%;
+}
+
+.w-\[35\%\] {
+  width: 35%;
+}
+
 .min-w-full {
   min-width: 100%;
 }
@@ -2210,6 +2216,14 @@ body[dir="rtl"] .checkbox:checked,
 
 .justify-around {
   justify-content: space-around;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
@@ -2595,6 +2609,12 @@ body[dir="rtl"] .checkbox:checked,
     --tw-space-x-reverse: 0;
     margin-right: calc(1.5rem * var(--tw-space-x-reverse));
     margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .lg\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .lg\:px-4 {
